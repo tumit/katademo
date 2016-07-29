@@ -47,5 +47,18 @@ public class SortingCharactersTest {
 		// assert
 		assertThat(result, is("abc"));
 	}	
+
+	@Test
+	public void long_sort() {
+
+		// arrange
+		String value = "When not studying nuclear physics, Bambi likes to play\nbeach volleyball.";
+		
+		// action
+		String result = rack.getSortString(value);
+		
+		// assert
+		assertThat(result, is("aaaaabbbbcccdeeeeeghhhiiiiklllllllmnnnnooopprsssstttuuvwyyyy"));
+	}	
 	
 }
