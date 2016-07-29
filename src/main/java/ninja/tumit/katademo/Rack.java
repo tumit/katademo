@@ -52,7 +52,7 @@ public class Rack {
 		
 		Node newNode = new Node(ch);
 		
-		if(this.root == null) {
+		if(isEmptyNode(this.root)) {
 			this.root = newNode;
 			return;
 		}
@@ -60,8 +60,8 @@ public class Rack {
 		Node currentNode = this.root;
 		
 		while(true) {
-			if(ch <= currentNode.value) {			
-				if(currentNode.left == null) {
+			if(isShouldGotoLeft(ch, currentNode)) {			
+				if(isEmptyNode(currentNode.left)) {
 					currentNode.left = newNode;
 					return;
 				} 	
@@ -69,7 +69,7 @@ public class Rack {
 				currentNode = currentNode.left;
 				
 			} else {			
-				if(currentNode.right == null) {
+				if(isEmptyNode(currentNode.right)) {
 					currentNode.right = newNode;
 					return;
 				}
@@ -79,5 +79,12 @@ public class Rack {
 		}
 	}
 
-
+	private boolean isEmptyNode(Node node) {
+		return node == null;
+	}
+	
+	private boolean isShouldGotoLeft(char value, Node node) {
+		return value <= node.value;
+	}
+	
 }
