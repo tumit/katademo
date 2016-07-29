@@ -54,7 +54,6 @@ public class Rack {
 		
 		if(this.root == null) {
 			this.root = newNode;
-			System.out.println("go to root: value=" + ch);
 			return;
 		}
 				
@@ -64,7 +63,6 @@ public class Rack {
 			if(ch <= currentNode.value) {			
 				if(currentNode.left == null) {
 					currentNode.left = newNode;
-					System.out.println("go to node.left: value=" + ch);
 					return;
 				} 	
 				
@@ -73,7 +71,6 @@ public class Rack {
 			} else {			
 				if(currentNode.right == null) {
 					currentNode.right = newNode;
-					System.out.println("go to node.right: value=" + ch);
 					return;
 				}
 				
