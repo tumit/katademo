@@ -21,4 +21,18 @@ public class SortingCharactersTest {
 		assertThat(result, is("wh"));
 	}
 	
+	@Test
+	public void letter_only() {
+
+		// arrange
+		Rack rack = new Rack();
+		String value = " Ab.,c";
+		
+		// action
+		String result = rack.getSortString(value);
+		
+		// assert
+		assertThat(result, is("abc"));
+	}	
+	
 }
